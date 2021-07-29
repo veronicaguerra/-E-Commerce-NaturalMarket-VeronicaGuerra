@@ -1,0 +1,19 @@
+.App-header {
+  align-content: flex-start;
+  background-color: #e8d9ac;
+  color: white;
+}
+
+.App-body {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  image-orientation: flip;
+}
+
+.App-Component {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  image-orientation: flip;
+}
