@@ -10,6 +10,7 @@ export const CartContext = (props) => {
   const [localStock, setStock] = useState(0);
   const [numbCount, setNumb] = useState(1)
   const [showButton, setShowButton] = useState(false)
+  const [modalShow, setModal] = useState(false) //modal de checkout
 
   const clearCart = () => setCart([]);
 
@@ -47,31 +48,18 @@ const checkCart = (id,originalStock) => {
       setStock(+tempStock);
       setNumb(+tempNumb);
       setShowButton(true)
-      console.log(`IS IN CART localstock, numbcount`, localStock, numbCount)
     }
     else {
       setStock(originalStock);
       setNumb(1);
       setShowButton(false);
-      console.log(`ELSE localstock, numbcount`, localStock, numbCount)
     }
   }
 
-  /* 
-1) hook para el boton añadir carrito
-
-2) setear en el checkCart un boolean para que haga aparecer el boton añadir carrito
-si ese item no existe, entonces se muestra el añadir,
-sino tiene que mostrarse solo el contador
-
-
-*/
-
-  console.log(`contenido del carrito`, cartContent);
   //todo lo que este envuelto en con el componente CartContext podra usar las props que pase por parametro del provider
   return (
     <providerCart.Provider
-      value={{ cartContent, setCart, clearCart, addCart, removeProd,localStock, setStock, totalBuy, setBuy, isInCart, numbCount,setNumb, checkCart ,showButton, setShowButton, reduceCartCount }}
+      value={{ cartContent, setCart, clearCart, addCart, removeProd,localStock, setStock, totalBuy, setBuy, isInCart, numbCount,setNumb, checkCart ,showButton, setShowButton, reduceCartCount, modalShow, setModal }}
     >
       {props.children}
     </providerCart.Provider>

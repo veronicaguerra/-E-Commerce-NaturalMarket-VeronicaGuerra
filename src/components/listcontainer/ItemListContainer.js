@@ -11,11 +11,11 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true)
 
 useEffect(() => {
-  (async () =>{
-    const resp = await productsCollection.get();
+(async () =>{
+     const resp = await productsCollection.get();
     setDataP(resp.docs.map((i)=>({id:i.id, ...i.data()})))
     setLoading(false);
-  } )();
+  } )(); 
 }, [])
 
 if (loading) return <h1>Loading...</h1>

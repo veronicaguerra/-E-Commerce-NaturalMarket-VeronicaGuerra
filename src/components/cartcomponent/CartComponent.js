@@ -16,6 +16,8 @@ const CartComponent = () => {
     setBuy,
   } = useContext(providerCart);
 
+  // maneja la aparicion del offcanvas que tiene el formulario
+  //que debe llenar el usuario para finalizar la compra
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -43,11 +45,11 @@ const CartComponent = () => {
     setShowButton(false); /// ####### que sea una funcion que pasas por props desde itemDetail
   };
 
-  if (!cartContent.length) {
+   if (!cartContent.length) {
     //agregar settimeout con un mensaje de 1 segundo que diga que no tiene nada en el carrito e invitar a la compra
     return <Redirect to="/" />;
   }
-
+ 
   return (
     <Container>
   <Row >
@@ -135,7 +137,7 @@ const CartComponent = () => {
         <Offcanvas.Body>
           Rellena este formulario con tus datos, luego te informaremos tu número de orden y podrás seguir tu pedido.
           <p></p>
-          <OrderForm/>
+         <OrderForm />
         </Offcanvas.Body>
       </Offcanvas>  
       </Col>

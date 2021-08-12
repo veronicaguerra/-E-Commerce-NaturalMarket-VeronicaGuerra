@@ -16,7 +16,7 @@ const ItemDetail = ({ value }) => {
       <Container>
         <Row>
           <Col sm={8}>
-            <Card style={{ width: "30rem" }} className="text-center">
+            <Card style={{ width: "40rem" }} className="text-center">
               <Card.Header as="h5">{value.name}</Card.Header>
               <Card.Img
                 variant="top"
@@ -26,6 +26,7 @@ const ItemDetail = ({ value }) => {
               />
               <Card.Body>
                 <Card.Text>{value.description}</Card.Text>
+                <Card.Text>Precio Unitario {value.price}</Card.Text>
               </Card.Body>
             </Card>
           </Col>

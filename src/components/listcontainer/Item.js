@@ -3,10 +3,9 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 
-const Item = ( { item } ) => {  
+const Item = ( { item } ) => { 
     return (
       <>
-     
         <Card  style={{ width: '25rem' , padding: 20, margin: 5 }}>
         <Card.Img className="d-block mx-auto" variant="top" src={item.img}  style={{ width: '18rem' }}/>
           <Card.Body>

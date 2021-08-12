@@ -4,15 +4,15 @@ import '@firebase/firestore';
 
 
 var firebaseConfig = {
-    apiKey: "AIzaSyAKfdIsEuZbpIRi9fovcEStXaZ0qSS7mhE",
-    authDomain: "natural-market-veronica-guerra.firebaseapp.com",
-    projectId: "natural-market-veronica-guerra",
-    storageBucket: "natural-market-veronica-guerra.appspot.com",
-    messagingSenderId: "1042433615926",
-    appId: "1:1042433615926:web:0a5e8528b858f4d02e5097"
+    apiKey: "AIzaSyCatOnagirfdwpD1rAME_KivHcxmWEmQHU",
+    authDomain: "natural-market-veronica-5541e.firebaseapp.com",
+    projectId: "natural-market-veronica-5541e",
+    storageBucket: "natural-market-veronica-5541e.appspot.com",
+    messagingSenderId: "793175833067",
+    appId: "1:793175833067:web:bc41e50408a991e9e541ae"
   };
   // Initialize Firebase
   const fb = !firebase.apps.length ?  firebase.initializeApp(firebaseConfig) : firebase.fb();
 
-  export const productsCollection = fb.firestore(fb).collection("product-naturalmarket");
+  export const productsCollection = fb.firestore(fb).collection("db");
  
