@@ -137,7 +137,7 @@ const CartComponent = () => {
         <Offcanvas.Body>
           Rellena este formulario con tus datos, luego te informaremos tu número de orden y podrás seguir tu pedido.
           <p></p>
-         <OrderForm />
+         <OrderForm/>
         </Offcanvas.Body>
       </Offcanvas>  
       </Col>

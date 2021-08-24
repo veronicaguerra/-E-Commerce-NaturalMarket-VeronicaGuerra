@@ -10,8 +10,8 @@ export const CartContext = (props) => {
   const [localStock, setStock] = useState(0);
   const [numbCount, setNumb] = useState(1)
   const [showButton, setShowButton] = useState(false)
-  const [modalShow, setModal] = useState(false) //modal de checkout
-
+  const [checkOrder, setCheckOrder] = useState([])
+  
   const clearCart = () => setCart([]);
 
   const removeProd = (idProduct) => {
@@ -35,10 +35,6 @@ export const CartContext = (props) => {
       });
       setCart(reduceCart);
   }
-  /* hacer que esta funcion incremente y decremente el contador de itemcount
-   y maneje el stocklocal
-   con un if 
-   */
     
 const checkCart = (id,originalStock) => {
     if (isInCart(id)){ 
@@ -59,7 +55,7 @@ const checkCart = (id,originalStock) => {
   //todo lo que este envuelto en con el componente CartContext podra usar las props que pase por parametro del provider
   return (
     <providerCart.Provider
-      value={{ cartContent, setCart, clearCart, addCart, removeProd,localStock, setStock, totalBuy, setBuy, isInCart, numbCount,setNumb, checkCart ,showButton, setShowButton, reduceCartCount, modalShow, setModal }}
+      value={{ cartContent, setCart, clearCart, addCart, removeProd,localStock, setStock, totalBuy, setBuy, isInCart, numbCount,setNumb, checkCart ,showButton, setShowButton, reduceCartCount, checkOrder, setCheckOrder}}
     >
       {props.children}
     </providerCart.Provider>

@@ -16,3 +16,4 @@ var firebaseConfig = {
 
   export const productsCollection = fb.firestore(fb).collection("db");
  
+  export const ordersCollection = fb.firestore(fb).collection("db_orders");

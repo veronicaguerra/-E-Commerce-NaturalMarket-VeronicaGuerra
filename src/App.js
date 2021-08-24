@@ -17,9 +17,11 @@ import Deals from "./components/routes/deals/Deals";
 import Cart from "./components/routes/cart/Cart";
 import ListDetailContainer from "./components/listdetailcontainer/ListDetailContainer";
 import ListCategories from "./components/routes/categories/ListCategories";
+import CheckOrder from "./components/routes/checkorder/CheckOrder";
 
 //context 
 import { CartContext } from "./components/context/CartContext";
+
 
 
 
@@ -44,6 +46,7 @@ const App = () => {
               <Route path="/categories/:categorie"  component={ListCategories} />
               <Route path="/item/:id"  component={ListDetailContainer} />
               <Route path="/cart" exact component={Cart} />
+              <Route path="/order" exact component={CheckOrder} />
             </div>
           </body>
         </Switch>

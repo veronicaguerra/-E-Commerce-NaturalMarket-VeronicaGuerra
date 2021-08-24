@@ -16,7 +16,7 @@ const Barra = () => {
 
   return (
     <>
-      <Navbar bg="#E8D9AC" expand="lg" navbarBsPrefix="fixed-bottom">
+      <Navbar bg="#E8D9AC" expand="lg" navbarBsPrefix="fixed-bottom" style={{ paddingLeft: "20px" }}>
       <Link to={`/`}>
         <Navbar.Brand >
           <img
@@ -40,18 +40,6 @@ const Barra = () => {
             <Nav.Link><Link to={`/deals`}>Ofertas</Link></Nav.Link>
             <Nav.Link><Link to={`/contact`}>Contactos</Link></Nav.Link>
           </Nav>
-          <Form inline>
-            <FormControl
-              type="text"
-              placeholder="jabon, glicerina, aceites esenciales..."
-              className="mr-sm-2 justify-content-end"
-              size="sm"
-            />
-
-            <Button variant="outline-secondary" className="justify-content-end">
-              Busqueda
-            </Button>
-          </Form>
           <Nav className="justify-content-end">
           <Nav.Link><Link to={`/cart`}>
               <img src={cartLogo} width="35rem" alt="logo-carrito-compras" />{" "}

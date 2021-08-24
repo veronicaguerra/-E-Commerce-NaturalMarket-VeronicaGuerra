@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { productsCollection } from "../database/FirebaseConfig";
+import { ordersCollection } from "../database/FirebaseConfig";
 import { providerCart } from "../context/CartContext";
+import { Redirect } from "react-router-dom";
 
 
 
@@ -11,7 +12,7 @@ const OrderForm = () => {
     
     cartContent,
     clearCart,
-    setModal,
+    setCheckOrder,
   } = useContext(providerCart);
 
 
@@ -22,43 +23,55 @@ const OrderForm = () => {
   const [emailCheckII, setEmailCheckII] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [emailInvalid, setEmailInvalid] = useState(false);
- 
+  const [finished, setFinished] = useState(false); 
+  const [tempOrder, setTempOrder] = useState([]);
+
+  useEffect(() => {
+    const temp = cartContent.map((i) => {
+      return{
+        idproduct:i.id,
+        product:i.name,
+        totalcant:i.cartCount,
+        price:i.price,
+        totalprice:i.cartCount*i.price
+      }
+    });
+    
+    setTempOrder(temp)
+
+  }, [cartContent])
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    clearCart();
-
-    setModal(true)
-/* if(emailInvalid === false && emailCheckI===emailCheckII){
-     productsCollection.add({ 
-      name:name,
-      lastname:lastName,
-      numberphone:numberPhone,
-      email:emailCheckII,
-      compra:cartContent
-    }).then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
+    setFinished(true) // este flag le dice a este componente que redirija al path /order que renderiza CheckOrder.js
+ 
+ if(emailInvalid === false && emailCheckI===emailCheckII){
+   const orderI = {
+    name:name,
+    lastname:lastName,
+    numberphone:numberPhone,
+    email:emailCheckII,
+    product:tempOrder,
+    } 
+ 
+    ordersCollection.add({ orderI })
+     .then((docRef) => {
+      setCheckOrder([{idorder:docRef.id, ...orderI}])
       // limpiar campos
     e.target.reset();
 
-    // borrar carrito de compras
-    clearCart();
-
     setEmailError(false)
 
-    setModal(true)
+    
   }).catch((error) => {
     console.error("Error adding document: ", error);
-});
+}); 
 
  
     
   } else {
     setEmailError(true)
   } 
-    */
-
-
   };
 
   const validateEmail = (e) => {
@@ -68,7 +81,11 @@ const OrderForm = () => {
         } else setEmailInvalid(false)
   }
 
-  
+  if(finished){
+    
+    clearCart();
+    return <Redirect to="/order"  />
+  } 
  
   return (
     <>
@@ -82,7 +99,6 @@ const OrderForm = () => {
                     required
                 ></input>
                 <span className="text-danger text-small d-block mb-2">
-                  {/*} {errors.name ==="required" ? "Ingrese su nombre" : null} */}
                 </span>
                 
                 <input
@@ -93,7 +109,6 @@ const OrderForm = () => {
                     required
                 ></input>
                 <span className="text-danger text-small d-block mb-2">
-                   {/*  { blankInput ? 'Escriba su apellido' : null}  */}
                 </span>
                 <input
                     name="numberPhone"
@@ -103,7 +118,6 @@ const OrderForm = () => {
                     required
                 ></input>
                 <span className="text-danger text-small d-block mb-2">
- {/*                    {errors?.numberPhone?.message} */}
                 </span>
                 <input
                     name="emailCheckI"
