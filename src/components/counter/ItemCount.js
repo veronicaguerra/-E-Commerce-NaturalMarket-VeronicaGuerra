@@ -17,11 +17,11 @@ const ItemCount = ({stock,idProduct,product}) => {
 
   const removeProduct = (idProduct) => {
     removeProd(idProduct);
-    setShowButton(false); /// ####### que sea una funcion que pasas por props desde itemDetail
+    setShowButton(false);
   };
 
     useEffect(() => {
-      checkCart(idProduct,stock)
+      checkCart(idProduct,stock) // la siguiente validación chequea si este item esta en el carrito
       if(numbCount>1){
         
         setCount(numbCount)
@@ -29,7 +29,6 @@ const ItemCount = ({stock,idProduct,product}) => {
         setCount(1)
       }
     }, [numbCount,checkCart,idProduct,stock,count]) 
-    //agregar o un if o un render condicional que pregunte si carrito no esta vacio que setcount=stock del cart
 
     return (
       <>
@@ -45,7 +44,7 @@ const ItemCount = ({stock,idProduct,product}) => {
             </Card.Text>) : null }
            <Card.Text>
             {showButton ?  null : (<Button variant="info" onClick={()=> {onAdd(product,count)}}> Añadir al carrito </Button>)}
-            <Button variant="info" onClick={()=> {removeProduct(idProduct)}}> Eliminar producto del carrito </Button>
+            {showButton ? (<Button variant="info" onClick={()=> {removeProduct(idProduct)}}> Eliminar producto del carrito </Button>) : null }
             </Card.Text>
           </Card.Body>
         </Card>
@@ -55,10 +54,3 @@ const ItemCount = ({stock,idProduct,product}) => {
 
 export default ItemCount
 
-
-/*
-traer la funcion reduceCartCount y reemplazar por el setCount's hook
-
-cambiar el nombre de setshowbutton por otro mas especifico para el de finalizar
-o pensarse como esa misma funcion puede usarse para el añadir carrito
-*/

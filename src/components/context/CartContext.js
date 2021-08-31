@@ -52,7 +52,7 @@ const checkCart = (id,originalStock) => {
     }
   }
 
-  //todo lo que este envuelto en con el componente CartContext podra usar las props que pase por parametro del provider
+  //todo lo que este envuelto con el componente CartContext podra usar las props que pase por parametro del provider
   return (
     <providerCart.Provider
       value={{ cartContent, setCart, clearCart, addCart, removeProd,localStock, setStock, totalBuy, setBuy, isInCart, numbCount,setNumb, checkCart ,showButton, setShowButton, reduceCartCount, checkOrder, setCheckOrder}}

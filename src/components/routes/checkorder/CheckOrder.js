@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row, Spinner, Table } from 'react-bootstrap';
 import { providerCart } from '../../context/CartContext';
 
 const CheckOrder = () => {
@@ -15,7 +15,7 @@ const CheckOrder = () => {
         setTimeout(() => { setLoading(false) }, 2000);
       }, [checkOrder])
 
-      if (loading) return <h1> cargando </h1>
+      if (loading) return <Spinner animation="border" />
      
     return (
       <Container>
@@ -23,7 +23,30 @@ const CheckOrder = () => {
     
         <Col sm={8}>
         <Table striped bordered hover>
-      <thead><h1>Detalles de la compra {/* {checkOrder.idorder} */}</h1>
+      <thead><h3>Datos cliente</h3>
+        <tr>
+        <th>N° Orden</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Num. Telefono</th>
+          <th>Direccion de Correo</th>
+        </tr>
+      </thead>
+     <tbody>
+      {localOrder.map((i,idx) => {
+            return (
+              <tr key={idx}>
+              <td>{i.idorder} </td>
+        <td>{i.name} </td>
+        <td>{i.lastname} </td>
+        <td>{i.numberphone} </td>
+        <td>{i.email} </td>
+        </tr> 
+      )})}  
+    </tbody> 
+    </Table>
+        <Table striped bordered hover>
+      <thead><h3>Detalles de la compra </h3>
         <tr>
           <th>ID</th>
           <th>Producto</th>
@@ -46,29 +69,6 @@ const CheckOrder = () => {
         <td>{j.totalprice} </td>
         </tr> 
    )}))})}  
-    </tbody> 
-    </Table>
-    </Col>
-    <Col sm={4}>
-    <Table striped bordered hover>
-      <thead><h1>Datos cliente</h1>
-        <tr>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Num. Telefono</th>
-          <th>Direccion de Correo</th>
-        </tr>
-      </thead>
-     <tbody>
-      {localOrder.map((i,idx) => {
-            return (
-              <tr key={idx}>
-        <td>{i.name} </td>
-        <td>{i.lastname} </td>
-        <td>{i.numberphone} </td>
-        <td>{i.email} </td>
-        </tr> 
-      )})}  
     </tbody> 
     </Table>
     </Col>

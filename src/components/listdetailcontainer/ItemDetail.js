@@ -13,7 +13,7 @@ const ItemDetail = ({ value }) => {
     
   return (
     <>
-      <Container>
+      <Container style={{ padding: 30 }}>
         <Row>
           <Col sm={8}>
             <Card style={{ width: "40rem" }} className="text-center">
@@ -26,7 +26,7 @@ const ItemDetail = ({ value }) => {
               />
               <Card.Body>
                 <Card.Text>{value.description}</Card.Text>
-                <Card.Text>Precio Unitario {value.price}</Card.Text>
+                <Card.Footer className="text-dark" >Precio Unitario {value.price}</Card.Footer>
               </Card.Body>
             </Card>
           </Col>

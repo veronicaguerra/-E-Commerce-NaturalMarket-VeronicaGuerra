@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { productsCollection } from "../database/FirebaseConfig";
+import { Spinner } from "react-bootstrap";
 
 
 const ListDetailContainer = () => {
@@ -18,7 +19,7 @@ const ListDetailContainer = () => {
       } )();
     }, [id])
 
-  if (loading || !product   ) return <h1>Loading...</h1>
+  if (loading || !product   ) return <Spinner animation="border" />
 
   return (
     <>

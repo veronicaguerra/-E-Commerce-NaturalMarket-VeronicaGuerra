@@ -38,20 +38,19 @@ const CartComponent = () => {
     setTimeout(() => {}, 1000);
   }, [cartContent, setBuy]);
 
-  // llevar reduce al contexto para usarlo en el bagde
 
   const removeProduct = (idProduct) => {
     removeProd(idProduct);
-    setShowButton(false); /// ####### que sea una funcion que pasas por props desde itemDetail
+    setShowButton(false); 
   };
 
    if (!cartContent.length) {
-    //agregar settimeout con un mensaje de 1 segundo que diga que no tiene nada en el carrito e invitar a la compra
+
     return <Redirect to="/" />;
   }
  
   return (
-    <Container>
+    <Container  style={{ padding: 30 }}>
   <Row >
 
     <Col md="auto">

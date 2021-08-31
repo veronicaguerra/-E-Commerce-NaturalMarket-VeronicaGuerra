@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { CardGroup } from "react-bootstrap";
+import { CardGroup, Spinner } from "react-bootstrap";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 //base de datos firebase 
@@ -18,7 +18,7 @@ useEffect(() => {
   } )(); 
 }, [])
 
-if (loading) return <h1>Loading...</h1>
+if (loading) return <Spinner animation="border" />
 
   return (
     <>

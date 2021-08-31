@@ -43,7 +43,7 @@ const OrderForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFinished(true) // este flag le dice a este componente que redirija al path /order que renderiza CheckOrder.js
+    
  
  if(emailInvalid === false && emailCheckI===emailCheckII){
    const orderI = {
@@ -67,7 +67,7 @@ const OrderForm = () => {
     console.error("Error adding document: ", error);
 }); 
 
- 
+setFinished(true) // este flag le dice a este componente que redirija al path /order que renderiza CheckOrder.js
     
   } else {
     setEmailError(true)
