@@ -22,12 +22,7 @@ import CheckOrder from "./components/routes/checkorder/CheckOrder";
 //context 
 import { CartContext } from "./components/context/CartContext";
 
-
-
-
-
 const App = () => {
-
 
   return (
    <CartContext>

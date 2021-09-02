@@ -1,9 +1,7 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
 import brandLogo from "../images/brandLogo.png";
-import Navbar from "react-bootstrap/Navbar";
 import cartLogo from "../images/cartLogo.png";
-import { NavDropdown } from "react-bootstrap";
+import { NavDropdown, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Barra = () => {

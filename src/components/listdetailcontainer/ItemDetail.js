@@ -1,10 +1,6 @@
 import React, { useContext } from "react";
-import Card from "react-bootstrap/Card";
 import ItemCount from "../counter/ItemCount";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Container } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { Button, Container, Row, Col, Card } from "react-bootstrap";
 import { providerCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
