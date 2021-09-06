@@ -1,74 +1,47 @@
-# Getting Started with Create React App
+##Tienda virtual creada con React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hola! este proyecto es una tienda virtual creada con la libreria de React y estilizada con React Bootstrap. Es de tipo SPA (single page application), usa Firestore como base de datos. Para mantener el estado del stock localmente y manipular el carrito de compras, se hace uso de "Context"; alli tambien verás funciones que son usadas desde varios componentes.
 
-## Available Scripts
+##
 
-In the project directory, you can run:
+Para iniciar la app necesitas instalar estas dependencias:
+\*\* Material-UI web oficial https://material-ui.com/
 
-### `npm start`
+\*\* React Bootstrap web oficial https://react-bootstrap.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+\*\* React Router DOM web oficial https://reactrouter.com/web/guides/quick-start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+\*\* Axios web oficial https://axios-http.com/docs/intro
 
-### `npm test`
+\*\* Firestore web oficial https://firebase.google.com/docs/firestore
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Inicia la app
 
-### `npm run build`
+corre el comando npm start y usalo modo desarrollo, abre [http://localhost:3000] en tu explorador web.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Rutas, navegación y secciones
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Inicio
+  Encontraras el catalogo con todos los productos disponibles en la tienda.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Categorias
+  Descubre los productos de la tienda filtrado por categorias.
 
-### `npm run eject`
+- Elige un producto
+  Sea a traves de la pagina principal o desde una categoria, vas a entrar a ver el producto que deseas y solo debes hacer click en "añadir al carrito", luego tendras la opcion de manipular las cantidades.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Ofertas
+  Mira en esta seccion todas las ofertas activas al momento.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Carrito
+  Una vez que hayas elegido uno o varios productos, tendras un desglose de la compra.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Formulario de la compra
+  Para completar la compra, deberas llenar un formularios con tus datos personales; luego ese formulario te muestra un boton para finalizar la compra y ¡Listo! la compra estará finalizada y se te entregará el numero de orden para que puedas dar seguimiento.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Vista con el final de la compra o "check out"
+  En esta seccion ya se muestra un resumen de la compra, los datos que dejaste en el formulario y tu numero de orden.
 
-## Learn More
+## Notas adicionales
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Paleta de colores
-
-fondo del logo y NavBar #E8D9AC
+Dentro de cada componente vas a tener comentarios que te guiaran acerca de la funcionalidad del mismo.
