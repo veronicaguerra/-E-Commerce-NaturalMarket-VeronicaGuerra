@@ -8,20 +8,21 @@ import { productsCollection } from '../database/FirebaseConfig';
 const ItemListContainer = () => {
   const { categorie } = useParams();
   const [products, setDataP] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
 useEffect(() => {
+
 (async () =>{
      const resp = await productsCollection.get();
     setDataP(resp.docs.map((i)=>({id:i.id, ...i.data()})))
     setLoading(false);
   } )(); 
-}, [])
+}, []) 
 
 if (loading) return <Spinner animation="border" />
 
-  return (
-    <>
+  return ( 
+    <> 
     <CardGroup>
       <ItemList value={categorie} products={products} />
       </CardGroup>
