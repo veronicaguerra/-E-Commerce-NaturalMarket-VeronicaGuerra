@@ -7,7 +7,7 @@ import Barra from "./components/navbar/NavBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Importing the Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //routes
 import Home from "./components/routes/home/Home";
