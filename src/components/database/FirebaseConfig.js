@@ -3,14 +3,13 @@ import firebase from 'firebase/app';
 import '@firebase/firestore';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyD3EKeYDKwz3HAIhpcVvbUdB_ja8Udnty8",
-  authDomain: "natural-market-veronica-a9562.firebaseapp.com",
-  projectId: "natural-market-veronica-a9562",
-  storageBucket: "natural-market-veronica-a9562.appspot.com",
-  messagingSenderId: "164812468197",
-  appId: "1:164812468197:web:589eaedf11b5d54912490c"
+  apiKey: "AIzaSyCaQv-_qY-Sfpk_0gSMBzUeWpKwYzJQ-qk",
+  authDomain: "naturalmarket-a.firebaseapp.com",
+  projectId: "naturalmarket-a",
+  storageBucket: "naturalmarket-a.appspot.com",
+  messagingSenderId: "267100822658",
+  appId: "1:267100822658:web:2f5d3f540f51d7f618289b"
 };
-
   // Initialize Firebase
   const fb = !firebase.apps.length ?  firebase.initializeApp(firebaseConfig) : firebase.fb();
 
